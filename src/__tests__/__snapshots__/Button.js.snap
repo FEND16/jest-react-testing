@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<button
+  class="bg-pink hover:bg-pink-light 
+  text-white font-bold py-2 px-4 
+  border-b-4 border-pink-dark 
+  hover:border-pink rounded mt-4
+"
+  data-test="button"
+>
+  Update Rates
+</button>
+`;
