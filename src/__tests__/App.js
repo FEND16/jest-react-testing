@@ -47,9 +47,22 @@ it('first rate should be AUD', () => {
   expect(firstParagraph.text()).toContain("AUD");
 })
 
-it('should populate list with rates from api', async () => {
+it('should populate list with rates from api', () => {
   fetchMock.get('https://api.fixer.io/latest?base=EUR', responseObject);
   const wrapper = mount(<App />);
-  await flushAllPromises();
-  expect(wrapper.find('[data-test="list"]').text()).toContain("AUD");
+  return flushAllPromises().
+    then(() => {
+      expect(wrapper.find('[data-test="list"]').text()).toContain("AUD");
+    })
 });
+
+it('should be base EUR', () =>{
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('h1').text()).toContain('EUR');
+})
+
+it.skip('should match snapshot', () => {
+  const rates = mapObjectToArray(responseObject.rates);
+  const wrapper = render(<App rates={rates} />);
+  expect(toJSON(wrapper)).toMatchSnapshot();
+})

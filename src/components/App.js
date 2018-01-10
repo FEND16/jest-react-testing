@@ -43,7 +43,9 @@ export default class App extends Component {
         </div>
         <h1 className="text-pink-dark mb-4">{this.state.base} Rates</h1>
         <p className="error">{this.state.error}</p>
-        <div data-test="list">{this.renderList(this.state.rates)}</div>
+        <div data-test="list">
+          {this.renderList(this.state.rates)}
+        </div>
       </div>
     );
   }

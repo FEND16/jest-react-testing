@@ -1,10 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`1. before click 1`] = `
+<button
+  className="bg-pink hover:bg-pink-light 
+  text-white 
+  font-bold py-2 px-4 
+  border-b-4 
+  border-pink-dark 
+  hover:border-pink rounded mt-4
+"
+  data-test="button"
+  onClick={[Function]}
+>
+  Update Rates
+</button>
+`;
+
+exports[`2. after click 1`] = `
+<button
+  className="
+  opacity-50 
+  cursor-not-allowed 
+  bg-pink hover:bg-pink-light 
+  text-white 
+  font-bold py-2 px-4 
+  border-b-4 
+  border-pink-dark 
+  hover:border-pink rounded mt-4
+
+"
+  data-test="button"
+  onClick={[Function]}
+>
+  Update Rates
+</button>
+`;
+
 exports[`should match snapshot 1`] = `
 <button
   class="bg-pink hover:bg-pink-light 
-  text-white font-bold py-2 px-4 
-  border-b-4 border-pink-dark 
+  text-white 
+  font-bold py-2 px-4 
+  border-b-4 
+  border-pink-dark 
   hover:border-pink rounded mt-4
 "
   data-test="button"

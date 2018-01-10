@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  class="flex flex-col justify-center items-center w-1/2 mx-auto font-mono text-grey-darker mt-6"
+>
+  <div
+    class="fixed pin-t pin-r m-4 font-mono uppercase text-sm flex flex-col items-center"
+  >
+    <p>
+      Updated: latest
+    </p>
+    <button
+      class="bg-pink hover:bg-pink-light 
+      text-white 
+      font-bold py-2 px-4 
+      border-b-4 
+      border-pink-dark 
+      hover:border-pink rounded mt-4
+    "
+      data-test="button"
+    >
+      Update Rates
+    </button>
+  </div>
+  <h1
+    class="text-pink-dark mb-4"
+  >
+    EUR Rates
+  </h1>
+  <p
+    class="error"
+  >
+    
+  </p>
+  <div
+    data-test="list"
+  >
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1.5316 AUD
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1.9558 BGN
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      3.9196 BRL
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1.5028 CAD
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1.1772 CHF
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      7.7975 CNY
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      25.84 CZK
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      7.445 DKK
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      0.88593 GBP
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      9.2953 HKD
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      7.5398 HRK
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      310.99 HUF
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      16123 IDR
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      4.1432 ILS
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      76.312 INR
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      134.7 JPY
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1277.7 KRW
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      23.522 MXN
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      4.8481 MYR
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      9.8605 NOK
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1.6825 NZD
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      59.43 PHP
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      4.1884 PLN
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      4.6499 RON
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      68.597 RUB
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      9.8727 SEK
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1.5937 SGD
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      39.027 THB
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      4.5475 TRY
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      1.1895 USD
+    </p>
+    <p
+      class="py-2 px-4 mb-4 border rounded shadow"
+    >
+      14.811 ZAR
+    </p>
+  </div>
+</div>
+`;

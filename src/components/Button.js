@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const buttonStyle = `bg-pink hover:bg-pink-light 
-  text-white font-bold py-2 px-4 
-  border-b-4 border-pink-dark 
+  text-white 
+  font-bold py-2 px-4 
+  border-b-4 
+  border-pink-dark 
   hover:border-pink rounded mt-4
 `;
 const disabledButtonStyle = `
