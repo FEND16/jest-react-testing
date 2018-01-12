@@ -33,7 +33,7 @@ afterEach(()=>{
 
 it('populate list with rates', () => {
   /* Mounts the whole app */
-  //const rates = mapObjectToArray(responseObject.rates);
+  const rates = mapObjectToArray(responseObject.rates);
   const wrapper = shallow(<App rates={rates} />);
   const list = wrapper.find('[data-test="list"]');
   expect(list.children()).toHaveLength(31);
