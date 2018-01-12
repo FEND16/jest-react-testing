@@ -32,5 +32,6 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  }
+  },
+  "homepage": "https://jesperorb.github.io/currency-check"
 }
