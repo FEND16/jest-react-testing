@@ -9,11 +9,14 @@ export default class App extends Component {
     date: this.props.date,
     base: this.props.base,
     error: '',
+    search: ''
   };
 
   componentDidMount() {
     this.updateRates();
   }
+
+  onChange = ({ target }) => this.setState({ [target.name] : target.value });
 
   updateRates = () => {
     /* 
@@ -27,7 +30,15 @@ export default class App extends Component {
       .catch(e => this.setState({ error: e.message }));
   };
 
+  filterList = rate => {
+    if(rate.value && this.state.search) {
+      return rate.key.includes(this.state.search)
+    }
+    return rate;
+  }
+
   renderList = rates => rates
+    .filter(this.filterList)
     .map(rate => (
       <p className="py-2 px-4 mb-4 border rounded shadow" key={rate.key}>
         {rate.value} {rate.key}
@@ -43,6 +54,14 @@ export default class App extends Component {
         </div>
         <h1 className="text-pink-dark mb-4">{this.state.base} Rates</h1>
         <p className="error">{this.state.error}</p>
+        <input 
+          type="text" 
+          value={this.state.search} 
+          onChange={this.onChange} 
+          name="search" 
+          className="shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-grey-darker" 
+          date-test="input"
+        />
         <div data-test="list">
           {this.renderList(this.state.rates)}
         </div>

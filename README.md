@@ -113,10 +113,10 @@ describe('button tests', () => {
 
 ```jsx
 const wrapper = mount(<App />);
-//Simulates an onchange event
-wrapper.find('input').simulate('change', { target: { value: 'new value' } });
 //Sets the value directly
-wrapper.find('input').node.value = 'new value';
+wrapper.find('input').instance().value = 'new value';
+//Simulates an onchange event
+wrapper.find('input').simulate('change');
 //Logs the value of an input field
-console.log(wrapper.find('input').node.value);
+console.log(wrapper.find('input').instance().value);
 ```
