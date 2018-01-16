@@ -6,8 +6,8 @@ cache:
     - node_modules
   yarn: true
 script:
-  - npm run build
-  - npm test
+  - yarn build
+  - yarn coverage
 deploy:
   provider: pages
   skip_cleanup: true
