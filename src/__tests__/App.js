@@ -4,7 +4,7 @@ import toJSON from 'enzyme-to-json';
 import fetchMock from 'fetch-mock';
 import App from '../components/App';
 import responseObject from '../responseObject';
-import responseObjectSEK from '../responseObjectSEK'
+import responseObjectSEK from '../responseObjectSEK';
 import { mapObjectToArray, loadRates } from '../api';
 
 /**
@@ -111,7 +111,7 @@ it('should check if rates have been updated today or yesterday', () => {
   const today = yearAndMonth + pad((date.getDate() - 1).toString());
   const wrapper = shallow(<App date={today} />);
   const updated = wrapper.find('.fixed p').text();
-  expect((updated.includes(today) || updated.includes(yesterday))).toBeTruthy();
+  expect(updated.includes(today) || updated.includes(yesterday)).toBeTruthy();
 });
 
 /**
@@ -175,16 +175,18 @@ describe('Base and Date', () => {
 
   it('should fetch from api at given date and currency', () => {
     const date = '2007-02-27';
-    const base = 'SEK'
+    const base = 'SEK';
     /* mock the fetch but send along a different response, I created a different
      * response object and changed the url 
      */
-    fetchMock.get(`https://api.fixer.io/${date}?base=${base}`, responseObjectSEK);
+    fetchMock.get(
+      `https://api.fixer.io/${date}?base=${base}`,
+      responseObjectSEK
+    );
     const wrapper = mount(<App base={base} date={date} />);
-    return flushAllPromises()
-      .then(() => {
-        expect(wrapper.find('h1').text()).toContain(base);
-        expect(wrapper.find('.fixed p').text()).toContain(date);
+    return flushAllPromises().then(() => {
+      expect(wrapper.find('h1').text()).toContain(base);
+      expect(wrapper.find('.fixed p').text()).toContain(date);
     });
   });
 });
@@ -193,35 +195,55 @@ describe('Input field test', () => {
   it('should search for currency', () => {
     const search = 'BGN';
     const rates = mapObjectToArray(responseObject.rates);
-    const wrapper = shallow(<App rates={rates}/>);
-    wrapper.setState({ search: search });
-    expect(wrapper.find(`[data-test="list"] p`).first().text()).toContain(search)
+    const wrapper = shallow(<App rates={rates} />);
+    wrapper.setState({ search });
+    expect(
+      wrapper
+        .find(`[data-test="list"] p`)
+        .first()
+        .text()
+    ).toContain(search);
   });
 
   it('list should be empty when search is wrong', () => {
     const search = 'blaj';
     const rates = mapObjectToArray(responseObject.rates);
-    const wrapper = shallow(<App rates={rates}/>);
+    const wrapper = shallow(<App rates={rates} />);
     /* Change the state to simulate a search instead of simulating 
      * an onchange, see below */
-    wrapper.setState({ search: search });
+    wrapper.setState({ search });
     expect(wrapper.find(`[data-test="list"]`).children()).toHaveLength(0);
   });
 
   /**
    * This one is a bit akward. The docs and API has changed a bit from
-   * 2 -> 3 which makes it hard to find a good way to change the node 
+   * 2 -> 3 which makes it hard to find a good way to change the node
    * value. It is easier to just change the state instead of doing this
    */
   it('should update search field', () => {
-    //Mocking because of mount triggers componentDidMount()
+    /* Mocking because of mount triggers componentDidMount() */
     fetchMock.get('https://api.fixer.io/latest?base=EUR', responseObject);
     const rates = mapObjectToArray(responseObject.rates);
-    const wrapper = mount(<App rates={rates}/>);
-    expect(wrapper.find("input").instance().value).toBe('');
-    //wrapper.setState({ search: 'AUD' })
-    wrapper.find("input").instance().value = 'AUD';
+    const wrapper = mount(<App rates={rates} />);
+    expect(wrapper.find('input').instance().value).toBe('');
+    /* wrapper.setState({ search: 'AUD' }) */
+    wrapper.find('input').instance().value = 'AUD';
     wrapper.find('input').simulate('change');
-    expect(wrapper.find("input").instance().value).toBe('AUD');
-  })
+    expect(wrapper.find('input').instance().value).toBe('AUD');
+  });
+});
+
+it.skip('should fetch from api at given date and currency', () => {
+  const date = '2007-02-27';
+  const base = 'SEK';
+  /* mock the fetch but send along a different response, I created a different
+     * response object and changed the url 
+     */
+  fetchMock.get(`https://api.fixer.io/${date}?base=${base}`, responseObjectSEK);
+  const wrapper = mount(<App base={base} date={date} />);
+  return flushAllPromises().then(() => {
+    expect(wrapper.state().date).toBe(date);
+    expect(wrapper.state().base).toBe(base);
+    expect(wrapper.state().rates).toEqual(mapObjectToArray(responseObjectSEK.rates))
+  });
 });

@@ -41,4 +41,4 @@ it('button state should be disabled on click, check state', () => {
   expect(toJSON(wrapper)).toMatchSnapshot("1. before click");  
   wrapper.find('[data-test="button"]').simulate('click');
   expect(toJSON(wrapper)).toMatchSnapshot("2. after click");  
-})
+});
