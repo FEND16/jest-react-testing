@@ -18,6 +18,9 @@ export function loadRates(date = 'latest', base = "EUR") {
  * @returns {Array} 
  */
 export function mapObjectToArray(rates){
+  if(typeof rates !== 'object'){
+    throw new Error("Not an object");
+  }
   return Object.entries(rates)
     .map(entry => Object.assign({ value: entry[1]}, { key: entry[0] }));
 }

@@ -1,6 +1,6 @@
 {
   "name": "jest-react-testing",
-  "description" : "Example react app to use for integration and snapshot testing",
+  "description": "Example react app to use for integration and snapshot testing",
   "private": true,
   "version": "0.1.0",
   "author": "Jesper Orb <jesperorb@gmail.com> (https://jesperorb.com/)",
@@ -21,9 +21,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage" : "yarn test --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
+    "coveralls": "3.0.0",
     "eslint-config-airbnb": "16.1.0",
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-react": "7.5.1"
@@ -31,7 +33,25 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "collectCoverageFrom": [
+      "src/*/*.js",
+      "!src/index.js",
+      "!src/registerServiceWorker.js",
+      "!src/setupTests.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      },
+      "./src/components/": {
+        "branches": 50,
+        "statements": 50
+      }
+    }
   },
   "homepage": "https://jesperorb.github.io/currency-check"
 }
