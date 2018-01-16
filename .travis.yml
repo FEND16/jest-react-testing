@@ -7,7 +7,7 @@ cache:
   yarn: true
 script:
   - yarn build
-  - yarn coverage
+  - yarn test --coverage && cat ./coverage/lcov.info | coveralls
 deploy:
   provider: pages
   skip_cleanup: true
