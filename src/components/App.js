@@ -60,7 +60,7 @@ export default class App extends Component {
           onChange={this.onChange} 
           name="search" 
           className="shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-grey-darker" 
-          date-test="input"
+          data-test="input"
         />
         <div data-test="list">
           {this.renderList(this.state.rates)}

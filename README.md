@@ -1,4 +1,4 @@
-# currency-check
+# jest-react-testing
 
 >Example app built with [`create-react-app`](https://github.com/facebookincubator/create-react-app) for integration and snapshot testing. The app fetches currency rates from [**fixer.io**](http://fixer.io/) and displays it in a list. It also has an update button that can be tested separately. **CSS-framework is [Tailwind](https://tailwindcss.com/)**
 

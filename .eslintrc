@@ -3,10 +3,12 @@
         "airbnb",
         "prettier"
     ],
+    "plugins": ["cypress"],
     "env": {
         "jest": true,
         "browser": true,
-        "es6": true
+        "es6": true,
+        "cypress/globals": true
     },
     "parser": "babel-eslint",
     "rules" : {

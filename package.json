@@ -22,14 +22,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "coverage" : "yarn test --coverage && cat ./coverage/lcov.info | coveralls",
-    "cypress:open": "cypress open"
+    "coverage": "yarn test --coverage && cat ./coverage/lcov.info | coveralls",
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run" : "./node_modules/.bin/cypress run"
   },
   "devDependencies": {
     "coveralls": "3.0.0",
     "cypress": "1.4.1",
     "eslint-config-airbnb": "16.1.0",
     "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-cypress": "2.0.1",
     "eslint-plugin-react": "7.5.1"
   },
   "jest": {
