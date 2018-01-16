@@ -3,16 +3,6 @@ import toJSON from 'enzyme-to-json';
 import { mount, render, shallow } from 'enzyme';
 import Button from '../components/Button';
 
-jest.useFakeTimers();
-
-it('should expect timeout to have been called', () => {
-  const wrapper = shallow(<Button onClick={() => {}} />);
-  wrapper.find('[data-test="button"]').simulate('click');
-  expect(setTimeout).toHaveBeenCalledTimes(1);
-  jest.runAllTimers();
-  expect(wrapper.state().disabled).toBe(false);
-});
-
 it('button state should be enabled from start', () => {
   const wrapper = mount(<Button onClick={() => {}} />);
   expect(wrapper.state().disabled).toBe(false);
